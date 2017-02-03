@@ -11,7 +11,10 @@ var numeroSecreto;
 var contadorIntentos;
 
 function comenzar()
-{
+{   
+
+	alert("usted comenzo el juego Numero secreto")
+    
 	//Genero el número RANDOM entre 1 y 100
 	 
 		//alert(numeroSecreto );
@@ -22,5 +25,16 @@ function comenzar()
 function verificar()
 {
 	
-	
+	numeroSecreto=document.getElementById('numero').value;         //Estas lineas de codigo cargan el numero que ingrese el usuario en 
+	numeroSecreto=parseInt(numeroSecreto);                         //la TextBox de "ingrese un numero" 
+	alert("usted ingreso el numero"+numeroSecreto)                 //y avisa al usuario de que numero ingreso
+
+
+	contadorIntentos=document.getElementById('intentos').value;    //todavia no funciona
+	contadorIntentos=parseInt(contadorIntentos); 
+
+
+	alert("cantidad de intentos:"+contadorIntentos);
+    alert(numeroSecreto);
+
 }
