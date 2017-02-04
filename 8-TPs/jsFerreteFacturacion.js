@@ -44,6 +44,7 @@ function PrecioFinal ()
 	var ivaDos;
 	var ivaTres;
 	var resultadoSuma;
+	var resultadoFinal;
    precioUno=document.getElementById('PrecioUno').value;
    precioDos=document.getElementById('PrecioDos').value;
    precioTres=document.getElementById('PrecioTres').value;
@@ -52,9 +53,12 @@ function PrecioFinal ()
    precioDos=parseInt(precioDos);
    precioTres=parseInt(precioTres);
 
-   ivaUno=(precioUno*1.21;
-   ivaDos=(precioDos*1.21;
-   ivaTres(precioTres*1.21;
-   alert("los precios con el IVA son: "+ivaUno+" "+ivaDos+" "+ivaTres);
+   ivaUno=(precioUno*1.21);
+   ivaDos=(precioDos*1.21);
+   ivaTres=(precioTres*1.21);
+
+   resultadoFinal=(ivaUno+ivaDos+ivaTres);
+   alert("el precio de los 3 mas el IVA 21% es: "+resultadoFinal);
+   
 
 }
