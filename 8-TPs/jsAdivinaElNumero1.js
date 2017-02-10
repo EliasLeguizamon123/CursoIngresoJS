@@ -13,28 +13,36 @@ var contadorIntentos;
 function comenzar()
 {   
 
-	alert("usted comenzo el juego Numero secreto")
-    numeroSecreto=document.getElementById('numero').value;         //Estas lineas de codigo cargan el numero que ingrese el usuario en 
-	numeroSecreto=parseInt(numeroSecreto);                         //la TextBox de "ingrese un numero" 
-	alert("usted ingreso el numero"+numeroSecreto)                 //y avisa al usuario de que numero ingreso
-
-
-	contadorIntentos=document.getElementById('intentos').value;    //todavia no funciona
-	contadorIntentos=parseInt(contadorIntentos); 
-
-
-	alert("cantidad de intentos:"+contadorIntentos);
-    alert(numeroSecreto);
-
 	//Genero el número RANDOM entre 1 y 100
-	 
-		//alert(numeroSecreto );
-	
+	 numeroSecreto = Math.floor((Math.random() * 100) + 1);
+	//alert(numeroSecreto );
+    console.log(numeroSecreto);
+    contadorIntentos=0;
+    document.getElementById('intentos').value=contadorIntentos;
+
 
 }
 
 function verificar()
 {
-	
+	var numeroUsuario;
+	contadorIntentos=contadorIntentos+1;                             //con esta linea voy incrementando el "contador"
+	numeroUsuario=document.getElementById('numero').value;
+	if (numeroUsuario==numeroSecreto) 
+	{
+     	alert("sos un genio papa y tan solo en "+contadorIntentos+" intentos"); 
+     }
+     else
+     {
+     	if(numeroUsuario>numeroSecreto)
+     	{
+     	  alert("me parece que te pasaste");
+
+     	}
+     	else
+     	{
+     	  alert("te falta picaron");
+     	}
+     }
 	
 }
