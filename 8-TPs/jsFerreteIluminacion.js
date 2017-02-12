@@ -8,48 +8,72 @@ E.	Si el importe final con descuento suma más de $120  se debe sumar un 10% de 
  ”Usted pago X de IIBB.”, siendo X el impuesto que se pagó. 
 
  */
-	function CalcularPrecio () 
+function CalcularPrecio () 
 {
-	 	var lamparitas;
-	 	var cantidad;
-	 	var precioConDescuento;
-	 	var precioBruto;
-	 	var marcas;
+ 	var lamparitas;
+ 	var cantidad;
+ 	var descuento;
+ 	var resultado;
+ 	var precioFinal;
+ 	var marca;
+ 	var precioLamparitas;
+ 	var precioConDescuento;
 
-	 	cantidad=document.getElementById('Cantidad').value;
-	 	marcas=document.getElementById('Marca').value;
-	 	precioBruto=cantidad*35;
-	 	cantidad=parseInt(cantidad)
-  		lamparitas=parseInt(lamparitas);
-  		lamparitas= 35;
-  		precioConDescuento=(lamparitas*1.5);
+ 	lamparitas=document.getElementById('Cantidad').value;
+ 	marca=document.getElementById('Marca').value;
+ 	lamparitas=parseInt(lamparitas);
+ 	precioLamparitas=35;
 
-  		if (cantidad>=6) 
-  			{
-     			precioConDescuento=precioBruto*0.5;
+ 	if (lamparitas>=6) 
+ 	{
+ 		descuento=(precioLamparitas*0.5);
 
-  			}
-  			else 
-  			{
-  			if (cantidad==5){
+ 	}
+ 	else if (lamparitas==5) 
+ 	{
+ 		if(marca=="ArgentinaLuz")
+ 		{
+ 			descuento=(precioLamparitas*0.6);
+ 		}
+ 		else 
+ 		{
+ 			descuento=(precioLamparitas*0.7);	
+ 		}
+ 	}
+ 	else if(lamparitas==4)
+ 	{
+ 		if(marca=="ArgentinaLuz" ||	marca=="FelipeLamparas")
+ 		{
+ 			descuento=(precioLamparitas*0.25);
+ 		}
+ 		else
+ 		{
+ 			descuento=(precioLamparitas*0.8);
+ 		}
+ 	}
+ 	else if(lamparitas==3)
+ 	{
+ 		if(marca=="ArgentinaLuz")
+ 		{
+ 			descuento=(precioLamparitas*0.95);
+ 		}
+ 		else if(marca=="FelipeLamparas")
+ 		{
+ 			descuento=(precioLamparitas*0.9);
+ 		}
+ 		else
+ 		{
+ 			descuento=(precioLamparitas*0.95);
+ 		}
+ 	}
 
-  			}
-  			}
-  			
- 			if (marca=="ArgentinaLuz") 
- 			
- 					{
- 							precioConDescuento=precioBruto*0.60;   //Arreglar esta mierda
- 					}
- 				
- 						
+if (descuento>120) 
+	{
+		precioFinal=(descuento*0.9);
+		alert("usted pago "+precioFinal+" de IIBB, siendo "+descuento+" el impuesto que se pago")
+	}
 
 
 
-  			
-  				
-  				
-  			
-
-  	document.getElementById('precioDescuento').value=precioConDescuento;
+document.getElementById('precioDescuento').value=descuento;
 }
