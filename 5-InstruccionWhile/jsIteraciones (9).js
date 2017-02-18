@@ -3,6 +3,7 @@ function Mostrar()
 
 	var contador=0;
 	// declarar variables
+	var bandera="nadie"; 
 	var edadMax;
 	var edadMin;
 	var edad;
@@ -22,6 +23,10 @@ function Mostrar()
 	var promedioDeNotas;
 	var contadorDeNotas;
 	var promedioDeMujeres;
+	var nombreDelDiez;
+	var edadDelDiez;
+	var sexoDelDiez;
+
 
 	while(respuesta!='no')
 	{
@@ -58,6 +63,14 @@ function Mostrar()
 			{
 				nota=prompt("error, ingrese su nota");
 				nota=parseInt(nota);
+				
+				if(nota==10 && bandera=="nadie")
+				{
+					nombreDelDiez=nombre;
+					edadDelDiez=edad;
+					sexoDelDiez=sexo;
+
+				}
 
 				promedioDeNotas=(contadorDeNotas/contador);
 
@@ -99,7 +112,7 @@ function Mostrar()
 		{
 			contador++;
 		}
-
+		//guardar el dato del primero que se saco 10
 
 
 		if (contador==1) 
