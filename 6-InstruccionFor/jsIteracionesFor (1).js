@@ -47,8 +47,10 @@
 
 					case 7:
 					contador7++;
-					if(contador7==7)
+					if(contador7==(contador*100))
 					{
+						
+
 						continue;
 					}
 					break;
