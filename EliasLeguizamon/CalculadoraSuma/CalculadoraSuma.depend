@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1490139535 source:d:\mis documentos\eliasleguizamon\calculadorasuma\main.c
+	<stdio.h>
+	<stdlib.h>
+
