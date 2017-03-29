@@ -8,13 +8,13 @@ int divicion(int numeroUno, int numeroDos);
 
 int main(void)
 {
-    int respuesta, z, x, y, t, valorUno, valorDos;
+    int respuesta, valorUno, valorDos, numeroUno, numeroDos;
 
     do
         {
             system("cls");
-            printf("-----MENU DE OPCIONES-----");
-            printf("SELECCIONE UNA DE LAS OPCIONES\n");
+            printf("-----MENU DE OPCIONES ");
+            printf("SELECCIONE UNA DE LAS OPCIONES-----\n");
             printf("1. sumar\n");
             printf("2. restar\n");
             printf("3. multiplicar\n");
@@ -27,22 +27,22 @@ int main(void)
                 {
                 case 1:
                 system("cls");
-                z=suma(valorUno, valorDos);
+                suma(numeroUno, numeroDos);
                 break;
 
                 case 2:
                 system("cls");
-                x=resta(valorUno, valorDos);
+                resta(valorUno, valorDos);
                 break;
 
                 case 3:
                 system("cls");
-                y=multiplicacion(valorUno, valorDos);
+                multiplicacion(valorUno, valorDos);
                 break;
 
                 case 4:
                 system("cls");
-                t=divicion(valorUno, valorDos);
+                divicion(valorUno, valorDos);
                 break;
 
                 default:
@@ -64,8 +64,30 @@ int suma(int numeroUno, int numeroDos)
     return resultado;
 
 }
+int resta(int numeroUno, int numeroDos)
+{
+    int resultado;
+    resultado=numeroUno-numeroDos;
+    printf("el resultado de la resta de %d y %d es: %d",numeroUno, numeroDos, resultado);
 
+    return resultado;
+}
+int multiplicacion(int numeroUno, int numeroDos)
+{
+    int resultado;
+    resultado=numeroUno*numeroDos;
+    printf("el resultado de la multiplicacion de %d y %d es: %d",numeroUno, numeroDos, resultado);
 
+    return resultado;
+}
+int divicion(int numeroUno, int numeroDos)
+{
+    int resultado;
+    resultado=numeroUno/numeroDos;
+    printf("el resultado de la divicion de %d y %d es: %d",numeroUno, numeroDos, resultado);
+
+    return resultado;
+}
 
 
 
